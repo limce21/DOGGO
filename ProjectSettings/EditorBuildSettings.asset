@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: 6bb6ec78602b642df81c6b24ebf173a0
-  - enabled: 1
-    path: Assets/Scenes/CustomScene.unity
-    guid: 1031aa44df1cf4067ba04db710b03663
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 2431b492daa38409a8b278c4aabd09d0, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: d79db061e311b4bc29a6ffa51d17a7e9, type: 2}
