@@ -436,6 +436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introPanel: {fileID: 2043609220}
   selectPanel: {fileID: 1613179224}
+  currentCharacter: 0
 --- !u!4 &111058045
 Transform:
   m_ObjectHideFlags: 0
@@ -509,7 +510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b3c7bfd5ed5184bb58058cf45638934d, type: 3}
+  m_Texture: {fileID: 2800000, guid: 53406e2af1b0b467ab641fa3c2b0956b, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1386,6 +1387,7 @@ GameObject:
   - component: {fileID: 659782901}
   - component: {fileID: 659782900}
   - component: {fileID: 659782899}
+  - component: {fileID: 659782902}
   m_Layer: 5
   m_Name: WelshCorgiBtn
   m_TagString: Untagged
@@ -1437,7 +1439,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.70980394, g: 0.9137255, b: 0.84705883, a: 1}
-    m_HighlightedColor: {r: 0.70980394, g: 0.9137255, b: 0.84705883, a: 1}
+    m_HighlightedColor: {r: 0.3882353, g: 0.4, b: 0.94509804, a: 1}
     m_PressedColor: {r: 0.3882353, g: 0.4, b: 0.94509804, a: 1}
     m_SelectedColor: {r: 0.3882353, g: 0.4, b: 0.94509804, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1458,7 +1460,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 659782900}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 659782902}
+        m_TargetAssemblyTypeName: DogButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &659782900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,6 +1511,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659782897}
   m_CullTransparentMesh: 1
+--- !u!114 &659782902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659782897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4806dfc3025e641ab8346c28bb6c81cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  species: welshcorg
+  speciesText: {fileID: 936843368}
+  inputNameText: {fileID: 1211866893}
+  selectImg: {fileID: 0}
+  selectedSprite: {fileID: 21300000, guid: b3c7bfd5ed5184bb58058cf45638934d, type: 3}
 --- !u!1 &676768115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,7 +1745,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC6F0\uC2DC\uCF54\uAE30"
+  m_Text: ???
 --- !u!222 &936843369
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1857,6 +1888,7 @@ GameObject:
   - component: {fileID: 1041302623}
   - component: {fileID: 1041302622}
   - component: {fileID: 1041302621}
+  - component: {fileID: 1041302624}
   m_Layer: 5
   m_Name: HuskyBtn
   m_TagString: Untagged
@@ -1908,7 +1940,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.70980394, g: 0.9137255, b: 0.84705883, a: 1}
-    m_HighlightedColor: {r: 0.70980394, g: 0.9137255, b: 0.84705883, a: 1}
+    m_HighlightedColor: {r: 0.3882353, g: 0.4, b: 0.94509804, a: 1}
     m_PressedColor: {r: 0.3882353, g: 0.4, b: 0.94509804, a: 1}
     m_SelectedColor: {r: 0.3882353, g: 0.4, b: 0.94509804, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1929,7 +1961,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1041302622}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1041302624}
+        m_TargetAssemblyTypeName: DogButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1041302622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1968,6 +2012,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041302619}
   m_CullTransparentMesh: 1
+--- !u!114 &1041302624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041302619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4806dfc3025e641ab8346c28bb6c81cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  species: husky
+  speciesText: {fileID: 936843368}
+  inputNameText: {fileID: 1211866893}
+  selectImg: {fileID: 0}
+  selectedSprite: {fileID: 21300000, guid: 2dc8976889b60477d8cfc491a08702b1, type: 3}
 --- !u!1 &1106641426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,6 +2262,7 @@ GameObject:
   - component: {fileID: 1186214014}
   - component: {fileID: 1186214013}
   - component: {fileID: 1186214012}
+  - component: {fileID: 1186214015}
   m_Layer: 5
   m_Name: RetrieverBtn
   m_TagString: Untagged
@@ -2252,7 +2314,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.70980394, g: 0.9137255, b: 0.84705883, a: 1}
-    m_HighlightedColor: {r: 0.70980394, g: 0.9137255, b: 0.84705883, a: 1}
+    m_HighlightedColor: {r: 0.3882353, g: 0.4, b: 0.94509804, a: 1}
     m_PressedColor: {r: 0.3882353, g: 0.4, b: 0.94509804, a: 1}
     m_SelectedColor: {r: 0.3882353, g: 0.4, b: 0.94509804, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2273,7 +2335,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1186214013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1186214015}
+        m_TargetAssemblyTypeName: DogButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1186214013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2312,6 +2386,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186214010}
   m_CullTransparentMesh: 1
+--- !u!114 &1186214015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186214010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4806dfc3025e641ab8346c28bb6c81cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  species: retriever
+  speciesText: {fileID: 936843368}
+  inputNameText: {fileID: 1211866893}
+  selectImg: {fileID: 0}
+  selectedSprite: {fileID: 21300000, guid: d5a99f0ebabfe4cb691e8a5fec73d2f4, type: 3}
 --- !u!1 &1190668217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2446,7 +2537,7 @@ GameObject:
   - component: {fileID: 1211866894}
   - component: {fileID: 1211866893}
   m_Layer: 5
-  m_Name: InputNameText
+  m_Name: SpeciesDescText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2505,9 +2596,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC9E7\uC740 \uB2E4\uB9AC\uC5D0 \uB4A4\uD0DC\uB294 \uCE58\uBA85\uC801!\n\uD65C\uB3D9\uC801\uC774\uACE0
-    \uC801\uADF9\uC801\uC778 \uCE5C\uAD6C\uC5D0\uC694.\n\uC2A4\uD0A8\uC2ED\uC744
-    \uC88B\uC544\uD55C\uB2F5\uB2C8\uB2E4."
+  m_Text: "\uC6D0\uD558\uB294 \uACAC\uC885\uC744 \uD074\uB9AD\uD558\uC138\uC694!"
 --- !u!222 &1211866894
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2628,6 +2717,55 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1335399942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1335399944}
+  - component: {fileID: 1335399943}
+  m_Layer: 0
+  m_Name: BtnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1335399943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335399942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4806dfc3025e641ab8346c28bb6c81cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  species: 
+  speciesText: {fileID: 936843368}
+  inputNameText: {fileID: 1211866893}
+  selectImg: {fileID: 0}
+  selectedSprite: {fileID: 0}
+--- !u!4 &1335399944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335399942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 265.68634, y: 471.96997, z: 0.000033505727}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1397870304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2865,7 +3003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1613179225
 RectTransform:
   m_ObjectHideFlags: 0
