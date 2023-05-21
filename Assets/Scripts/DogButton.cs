@@ -9,6 +9,8 @@ public class DogButton : MonoBehaviour
     public RawImage selectImg; // 선택된 이미지를 표시할 RawImage 컴포넌트
     public Texture selectedTexture; // 선택된 상태의 텍스처 이미지
 
+    public Dogs dog;
+
     public void OnButtonClick()
     {
         if (species == "husky")
@@ -29,5 +31,7 @@ public class DogButton : MonoBehaviour
 
         // 선택된 이미지 업데이트
         selectImg.texture = selectedTexture;
+        
+        DataManager.instance.currentDog = dog;
     }
 }
