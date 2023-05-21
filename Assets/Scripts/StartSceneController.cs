@@ -12,6 +12,7 @@ public class StartSceneController : MonoBehaviour
     public GameObject selectPanel;
     public GameObject customPanel;
     public static StartSceneController instance;
+    public Button selectButton;
 
     private void Awake()
     {
@@ -26,7 +27,7 @@ public class StartSceneController : MonoBehaviour
         // StartBtn 버튼에 클릭 이벤트를 등록합니다.
         Button startButton = GameObject.Find("StartBtn").GetComponent<Button>();
         startButton.onClick.AddListener(OnStartButtonClick);
-        Button selectButton = GameObject.Find("SelectBtn").GetComponent<Button>();
+        // selectButton 버튼에 클릭 이벤트를 등록합니다.
         selectButton.onClick.AddListener(OnSelectButtonClick);
     }
 
@@ -40,11 +41,11 @@ public class StartSceneController : MonoBehaviour
     }
     private void OnSelectButtonClick()
     {
-        // IntroPanel을 비활성화합니다.
-        introPanel.SetActive(false);
+        // SelectPanel을 비활성화합니다.
+        selectPanel.SetActive(false);
 
-        // SelectPanel을 활성화합니다.
-        selectPanel.SetActive(true);
+        // CustomPanel을 활성화합니다.
+        customPanel.SetActive(true);
     }
 
 

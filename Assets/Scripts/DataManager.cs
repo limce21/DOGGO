@@ -6,15 +6,20 @@ public enum Dogs
 {
     Husky, WelshCorgi, Retriever
 }
+
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
-    private void Awake() 
+
+    public Dogs currentDog; // 현재 선택한 강아지 종류
+
+    private void Awake()
     {
-        if(instance == null) instance = this;
-        else if(instance != null) return;
+        if (instance == null)
+            instance = this;
+        else if (instance != null)
+            return;
+
         DontDestroyOnLoad(gameObject);
     }
-
-    public Dogs currentDog;
 }
