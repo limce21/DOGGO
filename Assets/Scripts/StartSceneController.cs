@@ -13,6 +13,8 @@ public class StartSceneController : MonoBehaviour
     public GameObject customPanel;
     public static StartSceneController instance;
     public Button selectButton;
+    public Button nextSceneButton;
+    public Text nameText; // 이름을 표시할 텍스트(Text)
 
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class StartSceneController : MonoBehaviour
         startButton.onClick.AddListener(OnStartButtonClick);
         // selectButton 버튼에 클릭 이벤트를 등록합니다.
         selectButton.onClick.AddListener(OnSelectButtonClick);
+
     }
 
     private void OnStartButtonClick()
@@ -46,6 +49,12 @@ public class StartSceneController : MonoBehaviour
 
         // CustomPanel을 활성화합니다.
         customPanel.SetActive(true);
+    }
+
+
+    public void OnNextButtonClick(){
+        DataManager.instance.selectedDogName = nameText.text;
+        Debug.Log(nameText.text);
     }
 
 
