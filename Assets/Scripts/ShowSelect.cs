@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
 public class ShowSelect : MonoBehaviour
 {
     public GameObject[] dogPrefabs;
     public GameObject dog;
-    public GameObject selectImg; // selectImg를 가리키는 GameObject
+    private GameObject selectImg; // selectImg를 가리키는 GameObject
 
     void Start()
     {
@@ -19,6 +17,12 @@ public class ShowSelect : MonoBehaviour
 
     private void OnEnable()
     {
+        if (selectImg != null)
+        {
+            // 기존에 생성된 selectImg가 있다면 삭제합니다.
+            Destroy(selectImg);
+        }
+
         // 현재 선택한 강아지 종류에 따라 selectImg를 생성합니다.
         switch (DataManager.instance.currentDog)
         {
@@ -39,6 +43,6 @@ public class ShowSelect : MonoBehaviour
         selectImg.transform.SetParent(transform, false);
 
         // selectImg의 위치를 (x: 0, y: 275)로 설정합니다.
-        selectImg.transform.position = new Vector3(265.5f, 472f+250f, 0f);
+        selectImg.transform.position = new Vector3(265.5f, 472f + 257f, 0f);
     }
 }

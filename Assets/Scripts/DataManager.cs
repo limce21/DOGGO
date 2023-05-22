@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public enum Dogs
 {
     Husky, WelshCorgi, Retriever
@@ -11,7 +11,8 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
 
-    public Dogs currentDog; // 현재 선택한 강아지 종류
+    public Dogs? currentDog; // 현재 선택한 강아지 종류
+    public string dogName;
 
     private void Awake()
     {

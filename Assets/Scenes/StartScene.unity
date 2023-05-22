@@ -438,6 +438,9 @@ MonoBehaviour:
   selectPanel: {fileID: 1613179224}
   customPanel: {fileID: 1891032297}
   selectButton: {fileID: 1190668219}
+  goNextSceneButton: {fileID: 966629321}
+  cancelButton: {fileID: 385427498}
+  dogName: {fileID: 129319244}
   currentCharacter: 0
 --- !u!4 &111058045
 Transform:
@@ -821,7 +824,6 @@ MonoBehaviour:
   - {fileID: 7432546735387669653, guid: 26188d6b2a9514fb89cea35a543d96d7, type: 3}
   - {fileID: 295301519801034768, guid: 65e3c943594174f459bb41a0df6df24c, type: 3}
   dog: {fileID: 0}
-  selectImg: {fileID: 325536667}
 --- !u!1 &328116640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,7 +1840,7 @@ GameObject:
   - component: {fileID: 966629322}
   - component: {fileID: 966629321}
   m_Layer: 5
-  m_Name: SelectBtn
+  m_Name: goNextSceneBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2895,7 +2897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b05d7598854c4663ac12e1e583acf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDog: 0
+  dogName: 
 --- !u!4 &1504096203
 Transform:
   m_ObjectHideFlags: 0
