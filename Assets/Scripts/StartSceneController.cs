@@ -75,5 +75,11 @@ public class StartSceneController : MonoBehaviour
         selectPanel.SetActive(true);
     }
 
+    public void OnNextButtonClick(){
+        DataManager.instance.selectedDogName = nameText.text;
+        Debug.Log(nameText.text);
+    }
+
+
     public Character currentCharacter;
 }
