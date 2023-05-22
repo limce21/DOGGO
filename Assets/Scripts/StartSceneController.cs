@@ -69,17 +69,10 @@ public class StartSceneController : MonoBehaviour
 
     private void OnCancelButtonClick()
     {
-        DataManager.instance.currentDog = null;
         DataManager.instance.dogName = null;
         customPanel.SetActive(false);
         selectPanel.SetActive(true);
     }
-
-    public void OnNextButtonClick(){
-        DataManager.instance.selectedDogName = nameText.text;
-        Debug.Log(nameText.text);
-    }
-
 
     public Character currentCharacter;
 }
