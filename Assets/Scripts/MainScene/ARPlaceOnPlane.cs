@@ -18,34 +18,8 @@ public class ARPlaceOnPlane : MonoBehaviour
 
     void Update()
     {
-        PlaceObjectByTouch();
-        //UpdateCenterObject(); // 매 프레임마다 UpdateCenterObject 함수를 실행한다.
-    }
-
-    private void PlaceObjectByTouch() // 터치한 곳에 강아지 객체를 올려줌
-    {
-        if (Input.touchCount > 0) // touch가 한번이라도 일어났을 때 실행 (touchCount : 화면에 접촉되어 있는 손가락 개수) 
-        {
-            Touch touch = Input.GetTouch(0); // 가장 처음에 터치가 일어난 곳을 반환한다. (touch.GetTouch(index) : 모바일 장치 화면에 접촉한 손가락 순서대로 Touch 구조체 반환)
-
-            List<ARRaycastHit> hits = new List<ARRaycastHit>();
-            if (arRaycaster.Raycast(touch.position, hits, TrackableType.Planes)) // touch가 일어난 방향으로 Ray를 쏜다.
-            {
-                Pose hitPose = hits[0].pose;
-                // 한 마리의 강아지 객체를 만들고 터치가 이동하는 곳으로 강아지 객체를 이동
-                if (!spawnObject) // 아직 스폰이 되지 않았다면 
-                {
-                    spawnObject = Instantiate(placeObject, hitPose.position, hitPose.rotation); // touch가 일어난 공간에 강아지 오브젝트 실체화
-                }
-                else // 이미 화면 상에 존재한다면 
-                {
-                    // spawnObject의 위치를 업데이트 시켜준다. 
-                    spawnObject.transform.position = hitPose.position;
-                    spawnObject.transform.rotation = hitPose.rotation;
-                }
-
-            }
-        }
+        //PlaceObjectByTouch();
+        UpdateCenterObject(); // 매 프레임마다 UpdateCenterObject 함수를 실행한다.
     }
 
     private void UpdateCenterObject() // 평면을 인식해서 강아지 객체를 보여줌
