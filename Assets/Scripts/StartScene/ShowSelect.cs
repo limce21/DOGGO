@@ -12,7 +12,6 @@ public class ShowSelect : MonoBehaviour
     void Start()
     {
         dog = Instantiate(dogPrefabs[(int)DataManager.instance.currentDog]);
-        dog.transform.position = transform.position;
     }
 
     private void OnEnable()
@@ -27,13 +26,13 @@ public class ShowSelect : MonoBehaviour
         switch (DataManager.instance.currentDog)
         {
             case Dogs.Husky:
-                selectImg = Instantiate(dogPrefabs[(int)Dogs.Husky], transform.position, Quaternion.identity);
+                selectImg = Instantiate(dogPrefabs[(int)Dogs.Husky], new Vector3(0f, 0f, 0f), Quaternion.identity);
                 break;
             case Dogs.WelshCorgi:
-                selectImg = Instantiate(dogPrefabs[(int)Dogs.WelshCorgi], transform.position, Quaternion.identity);
+                selectImg = Instantiate(dogPrefabs[(int)Dogs.WelshCorgi], new Vector3(0f, 0f, 0f), Quaternion.identity);
                 break;
             case Dogs.Retriever:
-                selectImg = Instantiate(dogPrefabs[(int)Dogs.Retriever], transform.position, Quaternion.identity);
+                selectImg = Instantiate(dogPrefabs[(int)Dogs.Retriever], new Vector3(0f, 0f, 0f), Quaternion.identity);
                 break;
             default:
                 break;
@@ -42,7 +41,7 @@ public class ShowSelect : MonoBehaviour
         // selectImg의 부모를 현재 스크립트가 부착된 GameObject로 설정합니다.
         selectImg.transform.SetParent(transform, false);
 
-        // selectImg의 위치를 (x: 0, y: 275)로 설정합니다.
-        selectImg.transform.position = new Vector3(265.5f, 472f + 257f, 0f);
+        // selectImg의 위치를 (x: 0, y: 0)로 설정합니다.
+        //selectImg.transform.position = new Vector3(0f, 0f, 0f);
     }
 }

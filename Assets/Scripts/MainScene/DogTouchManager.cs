@@ -37,7 +37,7 @@ public class DogTouchManager : MonoBehaviour
 
     void SpawnHeart(Vector3 position)
     {
-        GameObject heart = Instantiate(heartPrefab, position, Quaternion.identity);
+        GameObject heart = Instantiate(heartPrefab, position, Quaternion.Euler(-90f, 0f, 0f));
         StartCoroutine(AnimateHeart(heart));
     }
 
