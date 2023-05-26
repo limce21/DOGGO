@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class ShowSelect : MonoBehaviour
 {
-    public GameObject[] dogPrefabs;
-    public GameObject dog;
+    public GameObject[] animalPrefabs;
+    public GameObject animal;
     private GameObject selectImg; // selectImg를 가리키는 GameObject
 
     void Start()
     {
-        dog = Instantiate(dogPrefabs[(int)DataManager.instance.currentDog]);
+        animal = Instantiate(animalPrefabs[(int)DataManager.instance.currentAnimal]);
     }
 
     private void OnEnable()
@@ -23,16 +23,16 @@ public class ShowSelect : MonoBehaviour
         }
 
         // 현재 선택한 강아지 종류에 따라 selectImg를 생성합니다.
-        switch (DataManager.instance.currentDog)
+        switch (DataManager.instance.currentAnimal)
         {
-            case Dogs.Husky:
-                selectImg = Instantiate(dogPrefabs[(int)Dogs.Husky], new Vector3(0f, 0f, 0f), Quaternion.identity);
+            case Animals.Tiger:
+                selectImg = Instantiate(animalPrefabs[(int)Animals.Tiger], new Vector3(0f, 0f, 0f), Quaternion.identity);
                 break;
-            case Dogs.WelshCorgi:
-                selectImg = Instantiate(dogPrefabs[(int)Dogs.WelshCorgi], new Vector3(0f, 0f, 0f), Quaternion.identity);
+            case Animals.Cat:
+                selectImg = Instantiate(animalPrefabs[(int)Animals.Cat], new Vector3(0f, 0f, 0f), Quaternion.identity);
                 break;
-            case Dogs.Retriever:
-                selectImg = Instantiate(dogPrefabs[(int)Dogs.Retriever], new Vector3(0f, 0f, 0f), Quaternion.identity);
+            case Animals.Dog:
+                selectImg = Instantiate(animalPrefabs[(int)Animals.Dog], new Vector3(0f, 0f, 0f), Quaternion.identity);
                 break;
             default:
                 break;

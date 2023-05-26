@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD5C8\uC2A4\uD0A4"
+  m_Text: "\uD638\uB791\uC774"
 --- !u!222 &43598864
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -819,11 +819,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1200d0421a55c42a7a3b4b5f7d8820cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dogPrefabs:
-  - {fileID: 1624113011872442343, guid: badbd5afdc26248cbb22edb6cda17132, type: 3}
-  - {fileID: 7432546735387669653, guid: 26188d6b2a9514fb89cea35a543d96d7, type: 3}
-  - {fileID: 295301519801034768, guid: 65e3c943594174f459bb41a0df6df24c, type: 3}
-  dog: {fileID: 0}
+  animalPrefabs:
+  - {fileID: 1286055159710111679, guid: 4a2677b763ecc4488914c910cc32549e, type: 3}
+  - {fileID: 591750548630082050, guid: 1f3604b4339374fafa1acf64d38cc726, type: 3}
+  - {fileID: 5336102056327303303, guid: 3bd2e6cb7371b47ed8d5a374ce4c8b0d, type: 3}
+  animal: {fileID: 0}
 --- !u!1 &328116640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,8 +1235,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 0.000017166, y: -0.000015974}
+  m_SizeDelta: {x: 117.7415, y: 155.0521}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604096280
 MonoBehaviour:
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: d5a99f0ebabfe4cb691e8a5fec73d2f4, type: 3}
+  m_Texture: {fileID: 2800000, guid: 5ee41bc26cb1e41e3866f08504155cb5, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1449,7 +1449,7 @@ GameObject:
   - component: {fileID: 659782902}
   - component: {fileID: 659782903}
   m_Layer: 5
-  m_Name: WelshCorgiBtn
+  m_Name: CatBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1583,12 +1583,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4806dfc3025e641ab8346c28bb6c81cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  species: welshcorg
+  species: cat
   speciesText: {fileID: 936843368}
   inputNameText: {fileID: 1211866893}
   selectImg: {fileID: 121334951}
-  selectedTexture: {fileID: 2800000, guid: b3c7bfd5ed5184bb58058cf45638934d, type: 3}
-  dog: 1
+  selectedTexture: {fileID: 2800000, guid: f783a692896c94b91b451e4cd863d343, type: 3}
+  animal: 1
 --- !u!114 &659782903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,8 +1601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1200d0421a55c42a7a3b4b5f7d8820cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dogPrefabs: []
-  dog: {fileID: 7432546735387669653, guid: 26188d6b2a9514fb89cea35a543d96d7, type: 3}
+  animalPrefabs: []
+  animal: {fileID: 6647131506220806907, guid: 27e82c8a2f2dc474a8d10d84ae09e664, type: 3}
 --- !u!1 &676768115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,7 +1893,7 @@ GameObject:
   - component: {fileID: 1041302624}
   - component: {fileID: 1041302625}
   m_Layer: 5
-  m_Name: HuskyBtn
+  m_Name: TigerBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2027,12 +2027,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4806dfc3025e641ab8346c28bb6c81cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  species: husky
+  species: tiger
   speciesText: {fileID: 936843368}
   inputNameText: {fileID: 1211866893}
   selectImg: {fileID: 121334951}
-  selectedTexture: {fileID: 2800000, guid: 2dc8976889b60477d8cfc491a08702b1, type: 3}
-  dog: 0
+  selectedTexture: {fileID: 2800000, guid: 606aec7c6aff647b293c19415ee4b403, type: 3}
+  animal: 0
 --- !u!114 &1041302625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2045,8 +2045,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1200d0421a55c42a7a3b4b5f7d8820cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dogPrefabs: []
-  dog: {fileID: 1624113011872442343, guid: badbd5afdc26248cbb22edb6cda17132, type: 3}
+  animalPrefabs: []
+  animal: {fileID: 2616939357083828643, guid: fe342ffcd26528e40ac1466c1a886491, type: 3}
 --- !u!1 &1106641426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,7 +2118,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB9AC\uD2B8\uB9AC\uBC84"
+  m_Text: "\uAC15\uC544\uC9C0"
 --- !u!222 &1106641429
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2230,8 +2230,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 0.000019073, y: 0.000022888}
+  m_SizeDelta: {x: 115.0009, y: 169.0912}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130986107
 MonoBehaviour:
@@ -2253,7 +2253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 2dc8976889b60477d8cfc491a08702b1, type: 3}
+  m_Texture: {fileID: 2800000, guid: 606aec7c6aff647b293c19415ee4b403, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2283,7 +2283,7 @@ GameObject:
   - component: {fileID: 1186214015}
   - component: {fileID: 1186214016}
   m_Layer: 5
-  m_Name: RetrieverBtn
+  m_Name: DogBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2417,12 +2417,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4806dfc3025e641ab8346c28bb6c81cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  species: retriever
+  species: dog
   speciesText: {fileID: 936843368}
   inputNameText: {fileID: 1211866893}
   selectImg: {fileID: 121334951}
-  selectedTexture: {fileID: 2800000, guid: d5a99f0ebabfe4cb691e8a5fec73d2f4, type: 3}
-  dog: 2
+  selectedTexture: {fileID: 2800000, guid: 5ee41bc26cb1e41e3866f08504155cb5, type: 3}
+  animal: 2
 --- !u!114 &1186214016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2435,8 +2435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1200d0421a55c42a7a3b4b5f7d8820cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dogPrefabs: []
-  dog: {fileID: 295301519801034768, guid: 65e3c943594174f459bb41a0df6df24c, type: 3}
+  animalPrefabs: []
+  animal: {fileID: 1693816920450361209, guid: 8d863aa0b58a54345a3b739c9e0954cf, type: 3}
 --- !u!1 &1190668217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,7 +2630,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC6D0\uD558\uB294 \uACAC\uC885\uC744 \uD074\uB9AD\uD558\uC138\uC694!"
+  m_Text: "\uC6D0\uD558\uB294 \uB3D9\uBB3C\uC744 \uC120\uD0DD\uD558\uC138\uC694!"
 --- !u!222 &1211866894
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2712,7 +2712,7 @@ MonoBehaviour:
   inputNameText: {fileID: 1211866893}
   selectImg: {fileID: 0}
   selectedTexture: {fileID: 0}
-  dog: 0
+  animal: 0
 --- !u!4 &1335399944
 Transform:
   m_ObjectHideFlags: 0
@@ -2763,8 +2763,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: -0.000015259, y: 0.000026703}
+  m_SizeDelta: {x: 116.5464, y: 149.0005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1397870306
 MonoBehaviour:
@@ -2786,7 +2786,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b3c7bfd5ed5184bb58058cf45638934d, type: 3}
+  m_Texture: {fileID: 2800000, guid: f783a692896c94b91b451e4cd863d343, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2830,7 +2830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b05d7598854c4663ac12e1e583acf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDog: 0
+  currentAnimal: 0
   dogName: 
 --- !u!4 &1504096203
 Transform:
@@ -3026,7 +3026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1613179225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3246,7 +3246,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC6F0\uC2DC\uCF54\uAE30"
+  m_Text: "\uACE0\uC591\uC774"
 --- !u!222 &1640281527
 CanvasRenderer:
   m_ObjectHideFlags: 0
