@@ -14,8 +14,10 @@ public class MainSceneController : MonoBehaviour
 
     void Start()
     {
-        placeObject = Instantiate(charPrefabs[(int)DataManager.instance.currentAnimal]);
         nameText.text = DataManager.instance.dogName;
+
+        placeObject = Instantiate(charPrefabs[(int)DataManager.instance.currentAnimal]);
+        prefabAnimator = placeObject.GetComponent<Animator>();
         walkButton.onClick.AddListener(onWalkButtonClick);
 
     }

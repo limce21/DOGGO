@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4689719}
   - component: {fileID: 4689718}
-  - component: {fileID: 4689720}
   m_Layer: 0
   m_Name: MainSceneController
   m_TagString: Untagged
@@ -155,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 420109063}
   prefabAnimator: {fileID: 0}
-  walkButton: {fileID: 0}
+  walkButton: {fileID: 1757729178}
   placeObject: {fileID: 0}
   charPrefabs:
   - {fileID: 2616939357083828643, guid: fe342ffcd26528e40ac1466c1a886491, type: 3}
@@ -176,21 +175,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4689720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4689717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f8e71b8674c48fdae7bc8431051ff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  walkButton: {fileID: 1757729178}
-  spinButton: {fileID: 599538811}
 --- !u!1 &40919614
 GameObject:
   m_ObjectHideFlags: 0
