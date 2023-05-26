@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4689717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4689719}
+  - component: {fileID: 4689718}
+  m_Layer: 0
+  m_Name: MainSceneController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &4689718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa4671d22d0344779fd4eca7135b2a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 420109063}
+--- !u!4 &4689719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689717}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 247.5, y: 440, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &40919614
 GameObject:
   m_ObjectHideFlags: 0
@@ -5191,6 +5236,7 @@ GameObject:
   - component: {fileID: 420109062}
   - component: {fileID: 420109064}
   - component: {fileID: 420109063}
+  - component: {fileID: 420109065}
   m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
@@ -5260,6 +5306,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420109061}
   m_CullTransparentMesh: 1
+--- !u!114 &420109065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420109061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f427783447c455191aa6bbdefcbba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charPrefabs:
+  - {fileID: 2616939357083828643, guid: fe342ffcd26528e40ac1466c1a886491, type: 3}
+  - {fileID: 6647131506220806907, guid: 27e82c8a2f2dc474a8d10d84ae09e664, type: 3}
+  - {fileID: 1693816920450361209, guid: 8d863aa0b58a54345a3b739c9e0954cf, type: 3}
+  player: {fileID: 0}
 --- !u!1 &484820342
 GameObject:
   m_ObjectHideFlags: 0
@@ -6484,7 +6547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b05d7598854c4663ac12e1e583acf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDog: 0
+  currentAnimal: 0
   dogName: 
 --- !u!4 &1714872118
 Transform:
@@ -6865,6 +6928,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arRaycaster: {fileID: 1828601340}
   placeObject: {fileID: 0}
+  charPrefabs:
+  - {fileID: 2616939357083828643, guid: fe342ffcd26528e40ac1466c1a886491, type: 3}
+  - {fileID: 6647131506220806907, guid: 27e82c8a2f2dc474a8d10d84ae09e664, type: 3}
+  - {fileID: 1693816920450361209, guid: 8d863aa0b58a54345a3b739c9e0954cf, type: 3}
 --- !u!4 &1979427020
 Transform:
   m_ObjectHideFlags: 0

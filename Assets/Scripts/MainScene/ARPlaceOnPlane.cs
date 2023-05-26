@@ -11,9 +11,12 @@ public class ARPlaceOnPlane : MonoBehaviour
 
     GameObject spawnObject;
 
+    public GameObject[] charPrefabs;
+
+
     void Start()
     {
-        
+        placeObject = Instantiate(charPrefabs[(int)DataManager.instance.currentAnimal]);
     }
 
     void Update()
