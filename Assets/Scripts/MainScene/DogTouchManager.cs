@@ -1,22 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DogTouchManager : MonoBehaviour
 {
-    public GameObject heartPrefab;
-    public float animationDuration = 1f;
-    public float movementSpeed = 1f;
-    public float movementRange = 0.1f;
+    public GameObject heartPrefab; // 하트 프리팹
+    public float pettingDistanceThreshold = 0.1f; // 쓰다듬기 거리 임계값
 
-    private Camera arCamera;
+    private GameObject heartObject; // 생성된 하트 객체
+    private bool isPetting; // 쓰다듬기 동작 여부
 
-    void Start()
-    {
-        arCamera = Camera.main;
-    }
-
-    void Update()
+    private void Update()
     {
         if (Input.touchCount > 0)
         {
@@ -24,48 +16,54 @@ public class DogTouchManager : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                Ray ray = arCamera.ScreenPointToRay(touch.position);
-                RaycastHit hit;
+                Vector3 touchPosition = touch.position;
+                Ray ray = Camera.main.ScreenPointToRay(touchPosition);
 
+                RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {
-                    SpawnHeart(hit.point);
+                    if (hit.collider.gameObject == gameObject)
+                    {
+                        isPetting = true;
+                        CreateHeartObject();
+                    }
                 }
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                isPetting = false;
+                DestroyHeartObject();
             }
         }
     }
 
-    void SpawnHeart(Vector3 position)
+    private void CreateHeartObject()
     {
-        GameObject heart = Instantiate(heartPrefab, position, Quaternion.Euler(-90f, 0f, 0f));
-        StartCoroutine(AnimateHeart(heart));
+        if (heartObject == null)
+        {
+            heartObject = Instantiate(heartPrefab, transform.position, Quaternion.Euler(-90f, 0f, 0f));
+        }
     }
 
-    IEnumerator AnimateHeart(GameObject heart)
+    private void DestroyHeartObject()
     {
-        float elapsedTime = 0f;
-        Vector3 initialPosition = heart.transform.position;
-
-        while (elapsedTime < animationDuration)
+        if (heartObject != null)
         {
-            float t = elapsedTime / animationDuration;
-
-            // 애니메이션: 서서히 나타나기
-            Color heartColor = heart.GetComponent<Renderer>().material.color;
-            heartColor.a = Mathf.Lerp(0f, 1f, t);
-            heart.GetComponent<Renderer>().material.color = heartColor;
-
-            // 애니메이션: 좌우로 움직이기
-            Vector3 newPosition = initialPosition + new Vector3(Mathf.Sin(t * movementSpeed) * movementRange, 0f, 0f);
-            heart.transform.position = newPosition;
-
-            // 애니메이션: 위로 상승하기
-            heart.transform.Translate(Vector3.up * (movementSpeed * Time.deltaTime), Space.World);
-
-            elapsedTime += Time.deltaTime;
-            yield return null;
+            Destroy(heartObject);
+            heartObject = null;
         }
+    }
 
-        Destroy(heart);
+    private void FixedUpdate()
+    {
+        if (isPetting)
+        {
+            Vector3 pettingPosition = transform.position + Vector3.up * 0.2f; // 쓰다듬기 위치
+
+            if (heartObject != null)
+            {
+                heartObject.transform.position = Vector3.Lerp(heartObject.transform.position, pettingPosition, Time.fixedDeltaTime * 5f);
+            }
+        }
     }
 }
