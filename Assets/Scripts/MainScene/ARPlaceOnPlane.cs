@@ -13,7 +13,6 @@ public class ARPlaceOnPlane : MonoBehaviour
 
     public GameObject[] charPrefabs;
 
-
     void Start()
     {
         placeObject = Instantiate(charPrefabs[(int)DataManager.instance.currentAnimal]);
@@ -25,7 +24,7 @@ public class ARPlaceOnPlane : MonoBehaviour
         UpdateCenterObject(); // 매 프레임마다 UpdateCenterObject 함수를 실행한다.
     }
 
-    private void UpdateCenterObject() // 평면을 인식해서 강아지 객체를 보여줌
+    private void UpdateCenterObject() // 평면을 인식해서 객체를 보여줌
     {
         Vector3 screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f)); // 카메라 스크린의 중간지점을 받아오는 함수
 
@@ -35,13 +34,15 @@ public class ARPlaceOnPlane : MonoBehaviour
         if (hits.Count > 0) // 부딪힌 객체가 있으면 
         {
             Pose placementPose = hits[0].pose; // 가장 먼저 부딪힌 그 위치를 placementPose라는 곳에 저장한다.
-            placeObject.SetActive(true); // 안 보이던 강아지 객체를 눈에 보이게 바꿔준다.
-            placeObject.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation); // 눈에 보이게 바꿔준 후 position과 rotation을 알맞게 위치시킨다. 
+            placeObject.SetActive(true); // 안 보이던 객체를 눈에 보이게 바꿔준다.
+
+            Vector3 position = placementPose.position;
+            Quaternion rotation = placementPose.rotation * Quaternion.Euler(0f, 180f, 0f); // Z축으로 180도 회전시킨다.
+            placeObject.transform.SetPositionAndRotation(position, rotation);
         }
         else // 만약에 부딪히는 평면이 없다면 -> 인식되는 부분이 없다면
         {
-            placeObject.SetActive(false); // 강아지 객체가 보이지 않는다.
+            placeObject.SetActive(false); // 객체가 보이지 않는다.
         }
     }
 }
- 
