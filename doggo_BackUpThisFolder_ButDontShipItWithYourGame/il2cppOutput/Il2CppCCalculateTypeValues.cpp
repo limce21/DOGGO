@@ -43496,10 +43496,14 @@ struct MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322  : public M
 	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___prefabAnimator_5;
 	// UnityEngine.UI.Button MainSceneController::walkButton
 	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___walkButton_6;
+	// UnityEngine.UI.Button MainSceneController::callButton
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___callButton_7;
+	// UnityEngine.UI.Button MainSceneController::backButton
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___backButton_8;
 	// UnityEngine.GameObject MainSceneController::placeObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placeObject_7;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placeObject_9;
 	// UnityEngine.GameObject[] MainSceneController::charPrefabs
-	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___charPrefabs_8;
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___charPrefabs_10;
 };
 
 // UnityEngine.UIElements.MinMaxSlider

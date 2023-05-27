@@ -155,6 +155,8 @@ MonoBehaviour:
   nameText: {fileID: 420109063}
   prefabAnimator: {fileID: 0}
   walkButton: {fileID: 1757729178}
+  callButton: {fileID: 599538811}
+  backButton: {fileID: 1732352792}
   placeObject: {fileID: 0}
   charPrefabs:
   - {fileID: 2616939357083828643, guid: fe342ffcd26528e40ac1466c1a886491, type: 3}

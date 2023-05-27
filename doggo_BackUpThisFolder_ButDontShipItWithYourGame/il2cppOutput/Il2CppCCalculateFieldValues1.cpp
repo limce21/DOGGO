@@ -9689,10 +9689,14 @@ struct MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322  : public M
 	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___prefabAnimator_5;
 	// UnityEngine.UI.Button MainSceneController::walkButton
 	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___walkButton_6;
+	// UnityEngine.UI.Button MainSceneController::callButton
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___callButton_7;
+	// UnityEngine.UI.Button MainSceneController::backButton
+	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___backButton_8;
 	// UnityEngine.GameObject MainSceneController::placeObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placeObject_7;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placeObject_9;
 	// UnityEngine.GameObject[] MainSceneController::charPrefabs
-	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___charPrefabs_8;
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___charPrefabs_10;
 };
 
 // ShowSelect
@@ -14625,9 +14629,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3753[6] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3754[4] = 
 {
 	static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___heartPrefab_4)),static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___pettingDistanceThreshold_5)),static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___heartObject_6)),static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___isPetting_7)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3755[5] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3755[7] = 
 {
-	static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___nameText_4)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___prefabAnimator_5)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___walkButton_6)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___placeObject_7)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___charPrefabs_8)),};
+	static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___nameText_4)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___prefabAnimator_5)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___walkButton_6)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___callButton_7)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___backButton_8)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___placeObject_9)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___charPrefabs_10)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3756[6] = 
 {
 	static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___species_4)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___speciesText_5)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___inputNameText_6)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___selectImg_7)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___selectedTexture_8)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___animal_9)),};
