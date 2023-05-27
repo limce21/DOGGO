@@ -23,7 +23,7 @@ public class MainSceneController : MonoBehaviour
     }
 
     private void onWalkButtonClick(){
-        prefabAnimator.SetTrigger("Walk");
+        prefabAnimator.SetBool("walk", true);
     }
 
 
