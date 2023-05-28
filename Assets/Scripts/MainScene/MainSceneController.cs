@@ -13,6 +13,7 @@ public class MainSceneController : MonoBehaviour
 
     public GameObject[] charPrefabs;
     public ARPlaceOnPlane arPlaceOnPlane; // ARPlaceOnPlane 스크립트 참조 변수
+    public DogTouchManager dogTouchManager; // DogTouchManager 스크립트 참조 변수
 
     public GameObject placeObject;
     public bool isWalking = false;
@@ -21,6 +22,7 @@ public class MainSceneController : MonoBehaviour
     {
         nameText.text = DataManager.instance.dogName;
         arPlaceOnPlane = FindObjectOfType<ARPlaceOnPlane>(); // ARPlaceOnPlane 스크립트 찾기
+        placeObject = arPlaceOnPlane.placeObject;
         placeObject = arPlaceOnPlane.placeObject; // placeObject 할당
         walkButton.onClick.AddListener(onWalkButtonClick);
         callButton.onClick.AddListener(onCallButtonClick);
@@ -36,16 +38,14 @@ public class MainSceneController : MonoBehaviour
         walkButton.gameObject.SetActive(false); // walkButton 비활성화
         callButton.gameObject.SetActive(false); // callButton 비활성화
         backButton.gameObject.SetActive(true); // backButton 활성화
-        Vector3 position = placeObject.transform.position;
-        Quaternion rotation = placeObject.transform.rotation * Quaternion.Euler(0f, 180f, 0f); // Y축으로 180도 회전시킨다.
-        placeObject.transform.SetPositionAndRotation(position, rotation);
+        placeObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         isWalking = true;
     }
 
     private void onCallButtonClick()
     {
         Animator spawnObjectAnimator = placeObject.GetComponent<Animator>();
-        //spawnObjectAnimator.SetBool("spin", true);
+        spawnObjectAnimator.SetBool("spin", true);
         walkButton.gameObject.SetActive(false); // walkButton 비활성화
         callButton.gameObject.SetActive(false); // callButton 비활성화
         backButton.gameObject.SetActive(true); // backButton 활성화
@@ -58,13 +58,14 @@ public class MainSceneController : MonoBehaviour
         walkButton.gameObject.SetActive(true); // walkButton 활성화
         callButton.gameObject.SetActive(true); // callButton 활성화
         backButton.gameObject.SetActive(false); // backButton 비활성화
-        Vector3 position = placeObject.transform.position;
-        Quaternion rotation = placeObject.transform.rotation * Quaternion.Euler(0f, 180f, 0f); // Y축으로 180도 회전시킨다.
-        placeObject.transform.SetPositionAndRotation(position, rotation);
+        if (isWalking)
+        {
+            placeObject.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
         isWalking = false;
     }
 
-       void Update()
+    void Update()
     {
         if (!placeObject)
         {

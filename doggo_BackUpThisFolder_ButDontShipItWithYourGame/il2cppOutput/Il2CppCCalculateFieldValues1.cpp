@@ -516,6 +516,8 @@ struct CommandBuffer_tB56007DC84EF56296C325EC32DD12AC1E3DC91F7;
 struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3;
 // UnityEngine.XR.ARSubsystems.ConfigurationChooser
 struct ConfigurationChooser_t4DFAB6BE3767C3C5DA0E43FA16CD067009A487C2;
+// DogTouchManager
+struct DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E;
 // UnityEngine.Networking.DownloadHandler
 struct DownloadHandler_t1B56C7D3F65D97A1E4B566A14A1E783EA8AE4EBB;
 // UnityEngine.UI.Dropdown
@@ -558,6 +560,8 @@ struct ISubsystemDescriptor_tEF29944D579CC7D70F52CB883150735991D54E6E;
 struct InputField_tABEA115F23FBD374EBE80D4FAC1D15BD6E37A140;
 // UnityEngine.Yoga.Logger
 struct Logger_t092B1218ED93DD47180692D5761559B2054234A0;
+// MainSceneController
+struct MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322;
 // UnityEngine.Material
 struct Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3;
 // UnityEngine.Yoga.MeasureFunction
@@ -9605,10 +9609,14 @@ struct CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8  : pu
 {
 	// UnityEngine.Animator CameraAnimationController::animator
 	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___animator_4;
+	// MainSceneController CameraAnimationController::mainSceneController
+	MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322* ___mainSceneController_5;
 	// UnityEngine.XR.ARFoundation.ARCameraManager CameraAnimationController::arCameraManager
-	ARCameraManager_t6E957EA922911B8447D086D9FB1F860EC967BD9F* ___arCameraManager_5;
+	ARCameraManager_t6E957EA922911B8447D086D9FB1F860EC967BD9F* ___arCameraManager_6;
 	// UnityEngine.Vector3 CameraAnimationController::previousPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___previousPosition_6;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___previousPosition_7;
+	// System.Boolean CameraAnimationController::isWalking
+	bool ___isWalking_8;
 };
 
 // DataManager
@@ -9697,10 +9705,12 @@ struct MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322  : public M
 	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___charPrefabs_9;
 	// ARPlaceOnPlane MainSceneController::arPlaceOnPlane
 	ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B* ___arPlaceOnPlane_10;
+	// DogTouchManager MainSceneController::dogTouchManager
+	DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E* ___dogTouchManager_11;
 	// UnityEngine.GameObject MainSceneController::placeObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placeObject_11;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placeObject_12;
 	// System.Boolean MainSceneController::isWalking
-	bool ___isWalking_12;
+	bool ___isWalking_13;
 };
 
 // ShowSelect
@@ -14621,9 +14631,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3749[4] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3750[3] = 
 {
 	static_cast<int32_t>(offsetof(DataManager_tE86238CF20D1A233E0ADDA21C619896E5F278275_StaticFields, ___instance_4)),static_cast<int32_t>(offsetof(DataManager_tE86238CF20D1A233E0ADDA21C619896E5F278275, ___currentAnimal_5)),static_cast<int32_t>(offsetof(DataManager_tE86238CF20D1A233E0ADDA21C619896E5F278275, ___dogName_6)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3751[3] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3751[5] = 
 {
-	static_cast<int32_t>(offsetof(CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8, ___animator_4)),static_cast<int32_t>(offsetof(CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8, ___arCameraManager_5)),static_cast<int32_t>(offsetof(CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8, ___previousPosition_6)),};
+	static_cast<int32_t>(offsetof(CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8, ___animator_4)),static_cast<int32_t>(offsetof(CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8, ___mainSceneController_5)),static_cast<int32_t>(offsetof(CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8, ___arCameraManager_6)),static_cast<int32_t>(offsetof(CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8, ___previousPosition_7)),static_cast<int32_t>(offsetof(CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8, ___isWalking_8)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3752[3] = 
 {
 	static_cast<int32_t>(offsetof(ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B, ___arRaycaster_4)),static_cast<int32_t>(offsetof(ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B, ___placeObject_5)),static_cast<int32_t>(offsetof(ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B, ___charPrefabs_6)),};
@@ -14633,9 +14643,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3753[6] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3754[4] = 
 {
 	static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___heartPrefab_4)),static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___pettingDistanceThreshold_5)),static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___heartObject_6)),static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___isPetting_7)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3755[9] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3755[10] = 
 {
-	static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___nameText_4)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___prefabAnimator_5)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___walkButton_6)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___callButton_7)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___backButton_8)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___charPrefabs_9)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___arPlaceOnPlane_10)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___placeObject_11)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___isWalking_12)),};
+	static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___nameText_4)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___prefabAnimator_5)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___walkButton_6)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___callButton_7)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___backButton_8)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___charPrefabs_9)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___arPlaceOnPlane_10)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___dogTouchManager_11)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___placeObject_12)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___isWalking_13)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3756[6] = 
 {
 	static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___species_4)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___speciesText_5)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___inputNameText_6)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___selectImg_7)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___selectedTexture_8)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___animal_9)),};

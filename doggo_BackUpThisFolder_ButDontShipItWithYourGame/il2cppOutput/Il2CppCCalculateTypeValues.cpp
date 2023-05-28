@@ -1840,6 +1840,8 @@ struct Delegate_t;
 struct DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E;
 // System.Runtime.Serialization.DeserializationEventHandler
 struct DeserializationEventHandler_t69A452A1DAD6B8D35D35D800CE2F2C9D156AF2B5;
+// DogTouchManager
+struct DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E;
 // UnityEngine.Networking.DownloadHandler
 struct DownloadHandler_t1B56C7D3F65D97A1E4B566A14A1E783EA8AE4EBB;
 // UnityEngine.UIElements.UIR.DrawParams
@@ -2150,6 +2152,8 @@ struct LogicalCallContext_t4BB407B088DB9FA68FE1EC2DB78D33F5BB4BDE9E;
 struct LongList_t44B31D456A48902766D723D1956CFCDDB0A99B1B;
 // System.Runtime.Remoting.Messaging.MCMDictionary
 struct MCMDictionary_tBAF54AD0F5FA5C82DF52F0835AFF93EE314BC53A;
+// MainSceneController
+struct MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322;
 // System.Threading.ManualResetEvent
 struct ManualResetEvent_t63959486AA41A113A4353D0BF4A68E77EBA0A158;
 // System.Threading.ManualResetEventSlim
@@ -43344,10 +43348,14 @@ struct CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8  : pu
 {
 	// UnityEngine.Animator CameraAnimationController::animator
 	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___animator_4;
+	// MainSceneController CameraAnimationController::mainSceneController
+	MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322* ___mainSceneController_5;
 	// UnityEngine.XR.ARFoundation.ARCameraManager CameraAnimationController::arCameraManager
-	ARCameraManager_t6E957EA922911B8447D086D9FB1F860EC967BD9F* ___arCameraManager_5;
+	ARCameraManager_t6E957EA922911B8447D086D9FB1F860EC967BD9F* ___arCameraManager_6;
 	// UnityEngine.Vector3 CameraAnimationController::previousPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___previousPosition_6;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___previousPosition_7;
+	// System.Boolean CameraAnimationController::isWalking
+	bool ___isWalking_8;
 };
 
 // DataManager
@@ -43504,10 +43512,12 @@ struct MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322  : public M
 	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___charPrefabs_9;
 	// ARPlaceOnPlane MainSceneController::arPlaceOnPlane
 	ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B* ___arPlaceOnPlane_10;
+	// DogTouchManager MainSceneController::dogTouchManager
+	DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E* ___dogTouchManager_11;
 	// UnityEngine.GameObject MainSceneController::placeObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placeObject_11;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placeObject_12;
 	// System.Boolean MainSceneController::isWalking
-	bool ___isWalking_12;
+	bool ___isWalking_13;
 };
 
 // UnityEngine.UIElements.MinMaxSlider
