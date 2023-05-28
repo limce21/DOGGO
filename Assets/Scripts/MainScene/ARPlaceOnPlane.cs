@@ -8,9 +8,6 @@ public class ARPlaceOnPlane : MonoBehaviour
 {
     public ARRaycastManager arRaycaster;
     public GameObject placeObject;
-
-    GameObject spawnObject;
-
     public GameObject[] charPrefabs;
 
     void Start()
@@ -20,8 +17,7 @@ public class ARPlaceOnPlane : MonoBehaviour
 
     void Update()
     {
-        //PlaceObjectByTouch();
-        UpdateCenterObject(); // 매 프레임마다 UpdateCenterObject 함수를 실행한다.
+        UpdateCenterObject();
     }
 
     private void UpdateCenterObject() // 평면을 인식해서 객체를 보여줌
@@ -37,12 +33,19 @@ public class ARPlaceOnPlane : MonoBehaviour
             placeObject.SetActive(true); // 안 보이던 객체를 눈에 보이게 바꿔준다.
 
             Vector3 position = placementPose.position;
-            Quaternion rotation = placementPose.rotation * Quaternion.Euler(0f, 180f, 0f); // Z축으로 180도 회전시킨다.
+            Quaternion rotation = placementPose.rotation * Quaternion.Euler(0f, 180f, 0f); // Y축으로 180도 회전시킨다.
             placeObject.transform.SetPositionAndRotation(position, rotation);
         }
         else // 만약에 부딪히는 평면이 없다면 -> 인식되는 부분이 없다면
         {
-            placeObject.SetActive(false); // 객체가 보이지 않는다.
+            if (placeObject.activeSelf) // placeObject가 활성화되어 있는 경우에만 위치를 고정한다.
+            {
+                placeObject.transform.SetPositionAndRotation(placeObject.transform.position, placeObject.transform.rotation);
+            }
+            else
+            {
+                placeObject.SetActive(false); // 객체가 보이지 않는다.
+            }
         }
     }
 }

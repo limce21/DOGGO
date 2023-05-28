@@ -460,6 +460,8 @@ struct ARCameraManager_t6E957EA922911B8447D086D9FB1F860EC967BD9F;
 struct ARFace_t73C068C9C8422F79A858EC41C322D399305B8453;
 // UnityEngine.XR.ARFoundation.AROcclusionManager
 struct AROcclusionManager_t9EDE9F76050AF892E2AC6704D0F76EDAC370609D;
+// ARPlaceOnPlane
+struct ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B;
 // UnityEngine.XR.ARFoundation.ARPlane
 struct ARPlane_tB2F02248AD4019D141553B25C1B9005913E98EF0;
 // UnityEngine.XR.ARFoundation.ARPointCloud
@@ -9517,10 +9519,8 @@ struct ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B  : public MonoBe
 	ARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44* ___arRaycaster_4;
 	// UnityEngine.GameObject ARPlaceOnPlane::placeObject
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placeObject_5;
-	// UnityEngine.GameObject ARPlaceOnPlane::spawnObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___spawnObject_6;
 	// UnityEngine.GameObject[] ARPlaceOnPlane::charPrefabs
-	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___charPrefabs_7;
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___charPrefabs_6;
 };
 
 // UnityEngine.XR.ARFoundation.ARPlaneMeshVisualizer
@@ -9693,10 +9693,14 @@ struct MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322  : public M
 	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___callButton_7;
 	// UnityEngine.UI.Button MainSceneController::backButton
 	Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* ___backButton_8;
-	// UnityEngine.GameObject MainSceneController::placeObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placeObject_9;
 	// UnityEngine.GameObject[] MainSceneController::charPrefabs
-	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___charPrefabs_10;
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___charPrefabs_9;
+	// ARPlaceOnPlane MainSceneController::arPlaceOnPlane
+	ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B* ___arPlaceOnPlane_10;
+	// UnityEngine.GameObject MainSceneController::placeObject
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placeObject_11;
+	// System.Boolean MainSceneController::isWalking
+	bool ___isWalking_12;
 };
 
 // ShowSelect
@@ -14620,18 +14624,18 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3750[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3751[3] = 
 {
 	static_cast<int32_t>(offsetof(CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8, ___animator_4)),static_cast<int32_t>(offsetof(CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8, ___arCameraManager_5)),static_cast<int32_t>(offsetof(CameraAnimationController_t351A7B6ED7F8F13D2FAAC656F36B480C75D31BF8, ___previousPosition_6)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3752[4] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3752[3] = 
 {
-	static_cast<int32_t>(offsetof(ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B, ___arRaycaster_4)),static_cast<int32_t>(offsetof(ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B, ___placeObject_5)),static_cast<int32_t>(offsetof(ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B, ___spawnObject_6)),static_cast<int32_t>(offsetof(ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B, ___charPrefabs_7)),};
+	static_cast<int32_t>(offsetof(ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B, ___arRaycaster_4)),static_cast<int32_t>(offsetof(ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B, ___placeObject_5)),static_cast<int32_t>(offsetof(ARPlaceOnPlane_t3695B37375E8C5125BC61AB920B325B765B69B8B, ___charPrefabs_6)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3753[6] = 
 {
 	static_cast<int32_t>(offsetof(CallObject_tCD1CBCB8FA7D8D161CCBB67AA66FA76EF01B363A, ___callButton_4)),static_cast<int32_t>(offsetof(CallObject_tCD1CBCB8FA7D8D161CCBB67AA66FA76EF01B363A, ___placeObject_5)),static_cast<int32_t>(offsetof(CallObject_tCD1CBCB8FA7D8D161CCBB67AA66FA76EF01B363A, ___moveSpeed_6)),static_cast<int32_t>(offsetof(CallObject_tCD1CBCB8FA7D8D161CCBB67AA66FA76EF01B363A, ___isObjectMoving_7)),static_cast<int32_t>(offsetof(CallObject_tCD1CBCB8FA7D8D161CCBB67AA66FA76EF01B363A, ___targetPosition_8)),static_cast<int32_t>(offsetof(CallObject_tCD1CBCB8FA7D8D161CCBB67AA66FA76EF01B363A, ___initialDistance_9)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3754[4] = 
 {
 	static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___heartPrefab_4)),static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___pettingDistanceThreshold_5)),static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___heartObject_6)),static_cast<int32_t>(offsetof(DogTouchManager_t708B60235D316054DF03A253A921CAE60755DA8E, ___isPetting_7)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3755[7] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3755[9] = 
 {
-	static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___nameText_4)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___prefabAnimator_5)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___walkButton_6)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___callButton_7)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___backButton_8)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___placeObject_9)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___charPrefabs_10)),};
+	static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___nameText_4)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___prefabAnimator_5)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___walkButton_6)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___callButton_7)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___backButton_8)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___charPrefabs_9)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___arPlaceOnPlane_10)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___placeObject_11)),static_cast<int32_t>(offsetof(MainSceneController_t830DABB25405605094E1A2518C41C031D04A3322, ___isWalking_12)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3756[6] = 
 {
 	static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___species_4)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___speciesText_5)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___inputNameText_6)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___selectImg_7)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___selectedTexture_8)),static_cast<int32_t>(offsetof(DogButton_t612E45E697AD468F47338A7F7CE7C9EA0B420F83, ___animal_9)),};

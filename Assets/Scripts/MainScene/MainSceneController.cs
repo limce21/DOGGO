@@ -10,15 +10,18 @@ public class MainSceneController : MonoBehaviour
     public Button walkButton;
     public Button callButton;
     public Button backButton;
-    public GameObject placeObject;
+
     public GameObject[] charPrefabs;
+    public ARPlaceOnPlane arPlaceOnPlane; // ARPlaceOnPlane 스크립트 참조 변수
+
+    public GameObject placeObject;
+    public bool isWalking = false;
 
     void Start()
     {
         nameText.text = DataManager.instance.dogName;
-
-        placeObject = Instantiate(charPrefabs[(int)DataManager.instance.currentAnimal]);
-        prefabAnimator = placeObject.GetComponent<Animator>();
+        arPlaceOnPlane = FindObjectOfType<ARPlaceOnPlane>(); // ARPlaceOnPlane 스크립트 찾기
+        placeObject = arPlaceOnPlane.placeObject; // placeObject 할당
         walkButton.onClick.AddListener(onWalkButtonClick);
         callButton.onClick.AddListener(onCallButtonClick);
         backButton.onClick.AddListener(onBackButtonClick);
@@ -28,15 +31,21 @@ public class MainSceneController : MonoBehaviour
 
     private void onWalkButtonClick()
     {
-        prefabAnimator.SetBool("walk", true);
+        Animator spawnObjectAnimator = placeObject.GetComponent<Animator>();
+        spawnObjectAnimator.SetBool("walk", true);
         walkButton.gameObject.SetActive(false); // walkButton 비활성화
         callButton.gameObject.SetActive(false); // callButton 비활성화
         backButton.gameObject.SetActive(true); // backButton 활성화
+        Vector3 position = placeObject.transform.position;
+        Quaternion rotation = placeObject.transform.rotation * Quaternion.Euler(0f, 180f, 0f); // Y축으로 180도 회전시킨다.
+        placeObject.transform.SetPositionAndRotation(position, rotation);
+        isWalking = true;
     }
 
     private void onCallButtonClick()
     {
-        prefabAnimator.SetBool("spin", true);
+        Animator spawnObjectAnimator = placeObject.GetComponent<Animator>();
+        //spawnObjectAnimator.SetBool("spin", true);
         walkButton.gameObject.SetActive(false); // walkButton 비활성화
         callButton.gameObject.SetActive(false); // callButton 비활성화
         backButton.gameObject.SetActive(true); // backButton 활성화
@@ -44,15 +53,28 @@ public class MainSceneController : MonoBehaviour
 
     private void onBackButtonClick()
     {
-        prefabAnimator.SetBool("walk", false);
-        prefabAnimator.SetBool("spin", false);
+        Animator spawnObjectAnimator = placeObject.GetComponent<Animator>();
+        spawnObjectAnimator.SetBool("walk", false);
         walkButton.gameObject.SetActive(true); // walkButton 활성화
         callButton.gameObject.SetActive(true); // callButton 활성화
         backButton.gameObject.SetActive(false); // backButton 비활성화
+        Vector3 position = placeObject.transform.position;
+        Quaternion rotation = placeObject.transform.rotation * Quaternion.Euler(0f, 180f, 0f); // Y축으로 180도 회전시킨다.
+        placeObject.transform.SetPositionAndRotation(position, rotation);
+        isWalking = false;
     }
 
-    void Update()
+       void Update()
     {
-
+        if (!placeObject)
+        {
+            placeObject = arPlaceOnPlane.placeObject; // placeObject 할당
+        }
+        if (isWalking)
+        {
+            // 사용자 앞에 고정된 위치 계산
+            Vector3 fixedPosition = Camera.main.transform.position + Camera.main.transform.forward * 1.5f;
+            placeObject.transform.position = new Vector3(fixedPosition.x, placeObject.transform.position.y, fixedPosition.z);
+        }
     }
 }
