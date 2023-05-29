@@ -22,6 +22,7 @@ public class MainSceneController : MonoBehaviour
     {
         nameText.text = DataManager.instance.dogName;
         arPlaceOnPlane = FindObjectOfType<ARPlaceOnPlane>(); // ARPlaceOnPlane 스크립트 찾기
+        dogTouchManager = FindObjectOfType<DogTouchManager>();
         placeObject = arPlaceOnPlane.placeObject; // placeObject 할당
         walkButton.onClick.AddListener(onWalkButtonClick);
         callButton.onClick.AddListener(onCallButtonClick);
@@ -50,16 +51,16 @@ public class MainSceneController : MonoBehaviour
         backButton.gameObject.SetActive(false); // backButton 비활성화
         placeObject.transform.rotation = Quaternion.Euler(0f, 180f, 0f); // 초기 회전 상태로 돌아감
         isWalking = false;
+        dogTouchManager.isCall = false;
     }
 
 
     private void onCallButtonClick()
     {
-        Animator spawnObjectAnimator = placeObject.GetComponent<Animator>();
-        spawnObjectAnimator.SetBool("spin", true);
         walkButton.gameObject.SetActive(false); // walkButton 비활성화
         callButton.gameObject.SetActive(false); // callButton 비활성화
         backButton.gameObject.SetActive(true); // backButton 활성화
+        dogTouchManager.isCall = true;
     }
 
 
