@@ -10,6 +10,8 @@ public class ARPlaceOnPlane : MonoBehaviour
     public GameObject placeObject;
     public GameObject[] charPrefabs;
 
+    private bool isFirst = true;
+
     void Start()
     {
         placeObject = Instantiate(charPrefabs[(int)DataManager.instance.currentAnimal]);
@@ -32,8 +34,16 @@ public class ARPlaceOnPlane : MonoBehaviour
             Pose placementPose = hits[0].pose; // 가장 먼저 부딪힌 그 위치를 placementPose라는 곳에 저장한다.
             placeObject.SetActive(true); // 안 보이던 객체를 눈에 보이게 바꿔준다.
             Vector3 position = placementPose.position;
-            Quaternion rotation = placementPose.rotation * Quaternion.Euler(0f, 180f, 0f); // Y축으로 180도 회전시킨다.
-            placeObject.transform.SetPositionAndRotation(position, rotation);
+            if (isFirst)
+            {
+                Quaternion rotation = placementPose.rotation * Quaternion.Euler(0f, 180f, 0f); // Y축으로 180도 회전시킨다.
+                placeObject.transform.SetPositionAndRotation(position, rotation);
+                isFirst = false;
+            } else
+            {
+                placeObject.transform.position = position;
+            }
+            
         }
         else // 만약에 부딪히는 평면이 없다면 -> 인식되는 부분이 없다면
         {

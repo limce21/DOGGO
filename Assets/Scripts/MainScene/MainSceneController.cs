@@ -22,7 +22,6 @@ public class MainSceneController : MonoBehaviour
     {
         nameText.text = DataManager.instance.dogName;
         arPlaceOnPlane = FindObjectOfType<ARPlaceOnPlane>(); // ARPlaceOnPlane 스크립트 찾기
-        placeObject = arPlaceOnPlane.placeObject;
         placeObject = arPlaceOnPlane.placeObject; // placeObject 할당
         walkButton.onClick.AddListener(onWalkButtonClick);
         callButton.onClick.AddListener(onCallButtonClick);
@@ -38,9 +37,21 @@ public class MainSceneController : MonoBehaviour
         walkButton.gameObject.SetActive(false); // walkButton 비활성화
         callButton.gameObject.SetActive(false); // callButton 비활성화
         backButton.gameObject.SetActive(true); // backButton 활성화
-        placeObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        placeObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f); // 반대로 회전
         isWalking = true;
     }
+
+    private void onBackButtonClick()
+    {
+        Animator spawnObjectAnimator = placeObject.GetComponent<Animator>();
+        spawnObjectAnimator.SetBool("walk", false);
+        walkButton.gameObject.SetActive(true); // walkButton 활성화
+        callButton.gameObject.SetActive(true); // callButton 활성화
+        backButton.gameObject.SetActive(false); // backButton 비활성화
+        placeObject.transform.rotation = Quaternion.Euler(0f, 180f, 0f); // 초기 회전 상태로 돌아감
+        isWalking = false;
+    }
+
 
     private void onCallButtonClick()
     {
@@ -51,19 +62,6 @@ public class MainSceneController : MonoBehaviour
         backButton.gameObject.SetActive(true); // backButton 활성화
     }
 
-    private void onBackButtonClick()
-    {
-        Animator spawnObjectAnimator = placeObject.GetComponent<Animator>();
-        spawnObjectAnimator.SetBool("walk", false);
-        walkButton.gameObject.SetActive(true); // walkButton 활성화
-        callButton.gameObject.SetActive(true); // callButton 활성화
-        backButton.gameObject.SetActive(false); // backButton 비활성화
-        if (isWalking)
-        {
-            placeObject.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-        }
-        isWalking = false;
-    }
 
     void Update()
     {
