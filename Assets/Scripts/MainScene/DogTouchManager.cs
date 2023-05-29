@@ -9,6 +9,7 @@ public class DogTouchManager : MonoBehaviour
     public float heartFadeDuration = 1f; // 하트 희미해지는 시간
     public float heartRiseSpeed = 0.1f; // 하트 상승 속도
     public bool isCall = false;
+    public bool isWalk = false;
 
     private GameObject heartObject; // 생성된 하트 객체
     private bool isPetting; // 쓰다듬기 동작 여부
@@ -74,6 +75,30 @@ public class DogTouchManager : MonoBehaviour
                 Color heartColor = heartObject.GetComponent<Renderer>().material.color;
                 heartColor.a = 1f;
                 heartObject.GetComponent<Renderer>().material.color = heartColor;
+            }
+        }
+
+        if (isWalk)
+        {
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Began)
+                {
+                    Vector3 touchPosition = touch.position;
+                    Ray ray = Camera.main.ScreenPointToRay(touchPosition);
+
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        if (hit.collider.gameObject == arPlaceOnPlane.placeObject)
+                        {
+                            Animator spawnObjectAnimator = arPlaceOnPlane.placeObject.GetComponent<Animator>();
+                            spawnObjectAnimator.SetTrigger("jump");
+                        }
+                    }
+                }
             }
         }
     }

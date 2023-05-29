@@ -10,6 +10,7 @@ public class MainSceneController : MonoBehaviour
     public Button walkButton;
     public Button callButton;
     public Button backButton;
+    public Button quitButton;
 
     public GameObject[] charPrefabs;
     public ARPlaceOnPlane arPlaceOnPlane; // ARPlaceOnPlane 스크립트 참조 변수
@@ -27,6 +28,7 @@ public class MainSceneController : MonoBehaviour
         walkButton.onClick.AddListener(onWalkButtonClick);
         callButton.onClick.AddListener(onCallButtonClick);
         backButton.onClick.AddListener(onBackButtonClick);
+        quitButton.onClick.AddListener(OnQuitButtonClick);
 
         backButton.gameObject.SetActive(false); // backButton 비활성화
     }
@@ -40,6 +42,7 @@ public class MainSceneController : MonoBehaviour
         backButton.gameObject.SetActive(true); // backButton 활성화
         placeObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f); // 반대로 회전
         isWalking = true;
+        dogTouchManager.isWalk = true;
     }
 
     private void onBackButtonClick()
@@ -52,6 +55,7 @@ public class MainSceneController : MonoBehaviour
         placeObject.transform.rotation = Quaternion.Euler(0f, 180f, 0f); // 초기 회전 상태로 돌아감
         isWalking = false;
         dogTouchManager.isCall = false;
+        dogTouchManager.isWalk = false;
     }
 
 
@@ -61,6 +65,21 @@ public class MainSceneController : MonoBehaviour
         callButton.gameObject.SetActive(false); // callButton 비활성화
         backButton.gameObject.SetActive(true); // backButton 활성화
         dogTouchManager.isCall = true;
+    }
+
+    private void OnQuitButtonClick()
+    {
+        // 게임 종료
+        QuitGame();
+    }
+
+    private void QuitGame()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 
 
